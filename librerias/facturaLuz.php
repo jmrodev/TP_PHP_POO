@@ -8,7 +8,7 @@ class facturaLuz extends factura {
   private $kilowats;
 
   public function __construct($id,$fecha,$monto,$kilowats) {
-    parent::__construct($id,$fecha,$monto);
+    parent::__construct($id,'Luz',$fecha,$monto);
     $this->kilowats = $kilowats;
   }
 
@@ -22,6 +22,12 @@ class facturaLuz extends factura {
 
   public function setKilowats($kilowats) {
     $this->kilowats = $kilowats;
+  }
+
+  // Implementación del método abstracto calcularTotal()
+  public function calcularTotal() {
+    $this->calcularMonto(); // Primero, calculamos el monto específico de la luz
+    return $this->monto;    // Luego, devolvemos el monto calculado
   }
 
 }

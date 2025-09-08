@@ -1,5 +1,5 @@
 <?php
 
-class mostrar($texto) {
+function mostrar($texto) {
     echo $texto;
 }

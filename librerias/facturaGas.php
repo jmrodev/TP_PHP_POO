@@ -18,4 +18,11 @@ class FacturaGas extends Factura {
     public function getMetrosCubicos() {
         return $this->metrosCubicos;
     }
+
+    // Implementación del método abstracto calcularTotal()
+    public function calcularTotal() {
+        // Calculamos el costo específico del gas y lo asignamos a la propiedad 'monto' heredada
+        $this->monto = $this->calcularCosto();
+        return $this->monto; // Devolvemos el monto calculado
+    }
 }

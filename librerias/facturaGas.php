@@ -1,22 +1,21 @@
-<?php 
+<?php
 
-include_once 'librerias/factura.php';
+require_once 'factura.php';
 
-class facturaGas extends factura {
+class FacturaGas extends Factura {
+    const PRECIO_METRO_CUBICO = 0.5;
+    private $metrosCubicos;
 
-  private $metorsCubicos;
+    public function __construct($id, $fecha, $monto, $metrosCubicos) {
+        parent::__construct($id,'Gas', $fecha, $monto);
+        $this->metrosCubicos = $metrosCubicos;
+    }
 
+    public function calcularCosto() {
+        return $this->metrosCubicos * self::PRECIO_METRO_CUBICO;
+    }
 
-  public function __construct($id, $fecha, $monto, $metorsCubicos) {
-    parent::__construct($id, 'Gas', $fecha, $monto);
-    $this->metorsCubicos = $metorsCubicos;
-  }
-
-  public function calcularTotal() {
-    $costoPorMetroCubico = 1.5;
-    return $this->metorsCubicos * $costoPorMetroCubico;
-  }
-
-  
-
+    public function getMetrosCubicos() {
+        return $this->metrosCubicos;
+    }
 }

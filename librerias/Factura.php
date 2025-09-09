@@ -1,5 +1,7 @@
 <?php
 
+include_once 'utils/visor.php'
+
 abstract class Factura {
   private $id;
   private $tipo;
@@ -11,7 +13,7 @@ abstract class Factura {
     $this->id = $id;
     $this->tipo = $tipo;
     $this->fecha = $fecha;
-    $this->setMonto($monto); // Usamos el setter para la validación inicial
+    $this->setMonto($monto);
   }
 
   abstract public function calcularTotal();
@@ -50,8 +52,7 @@ abstract class Factura {
     if (is_numeric($monto) && $monto >= 0) {
         $this->monto = $monto;
     } else {
-        // Si el monto no es válido, lo dejamos en 0 por seguridad.
-        $this->monto = 0;
+     visor("Monto inválido. Debe ser un número no negativo."); 
     }
   }
 }

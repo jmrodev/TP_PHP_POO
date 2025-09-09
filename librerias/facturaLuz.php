@@ -24,10 +24,9 @@ class facturaLuz extends factura {
     $this->kilowats = $kilowats;
   }
 
-  // Implementación del método abstracto calcularTotal()
   public function calcularTotal() {
-    $this->calcularMonto(); // Primero, calculamos el monto específico de la luz
-    return $this->monto;    // Luego, devolvemos el monto calculado
+    $this->calcularMonto();
+    return $this->monto;
   }
 
 }

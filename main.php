@@ -20,6 +20,19 @@ $opcionesMenu = [
   "Ver factura de gas"
 ];
 
-$opcionSeleccionada = mostrarMenu($opcionesMenu);
+$opcionSeleccionada = mostrarMenu($opcionesMenu, " Facturas de Servicios");
 
-echo "Ha seleccionado " . $opcionSeleccionada . PHP_EOL;
+
+switch ($opcionSeleccionada) {
+  case 1:
+    $facturas = [$factura1, $factura3, $factura5];
+    break;
+  case 2:
+    $facturas = [$factura2, $factura4, $factura6];
+    break;
+  default:
+    mostrar("Opción no válida." . PHP_EOL);
+    exit;
+}
+mostrarFacturas($facturas);
+

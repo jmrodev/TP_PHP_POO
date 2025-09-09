@@ -32,8 +32,25 @@ abstract class factura {
     return $this->monto;
   }
 
+
+  public function setId($id) {
+   $this->id = $id;  
+  }
+
+  public function setTipo($tipo){
+    $this->tipo = $tipo;
+  }
+
+  public function setFecha($fecha){
+    $this->fecha = $fecha;
+  }
+
+
   public function setMonto($monto) {
     $this->monto = $monto;
   }
+
+
+
 
 }

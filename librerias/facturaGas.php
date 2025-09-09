@@ -3,6 +3,7 @@
 require_once 'factura.php';
 
 class FacturaGas extends Factura {
+  
     const PRECIO_METRO_CUBICO = 0.5;
     private $metrosCubicos;
 
@@ -19,10 +20,8 @@ class FacturaGas extends Factura {
         return $this->metrosCubicos;
     }
 
-    // Implementación del método abstracto calcularTotal()
     public function calcularTotal() {
-        // Calculamos el costo específico del gas y lo asignamos a la propiedad 'monto' heredada
         $this->monto = $this->calcularCosto();
-        return $this->monto; // Devolvemos el monto calculado
+        return $this->monto;
     }
 }

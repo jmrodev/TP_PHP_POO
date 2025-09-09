@@ -1,18 +1,18 @@
 <?php
 
-require_once 'librerias/facturaLuz.php';
-require_once 'librerias/facturaGas.php';
+require_once 'librerias/FacturaLuz.php';
+require_once 'librerias/FacturaGas.php';
 require_once 'utils/visor.php';
 require_once 'utils/menu.php';
 
 $facturas = [];
 
-$factura1 = new facturaLuz(1, '2023-01-15', 0, 350);
-$factura2 = new facturaGas(2, '2023-01-20', 0, 25);
-$factura3 = new facturaLuz(3, '2023-02-15', 0, 400);
-$factura4 = new facturaGas(4, '2023-02-20', 0, 30);
-$factura5 = new facturaLuz(5, '2023-03-15', 0, 300);
-$factura6 = new facturaGas(6, '2023-03-20', 0, 20);
+$factura1 = new FacturaLuz(1, '2023-01-15', 350);
+$factura2 = new FacturaGas(2, '2023-01-20', 25);
+$factura3 = new FacturaLuz(3, '2023-02-15', 400);
+$factura4 = new FacturaGas(4, '2023-02-20', 30);
+$factura5 = new FacturaLuz(5, '2023-03-15', 300);
+$factura6 = new FacturaGas(6, '2023-03-20', 20);
 
 
 $opcionesMenu = [

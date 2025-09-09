@@ -1,17 +1,17 @@
 <?php
 
-abstract class factura {
-  protected $id;
-  protected $tipo;
-  protected $fecha;
-  protected $monto;
+abstract class Factura {
+  private $id;
+  private $tipo;
+  private $fecha;
+  private $monto;
 
   
   protected function __construct($id, $tipo, $fecha, $monto) {
     $this->id = $id;
     $this->tipo = $tipo;
     $this->fecha = $fecha;
-    $this->monto = $monto;
+    $this->setMonto($monto); // Usamos el setter para la validación inicial
   }
 
   abstract public function calcularTotal();
@@ -47,10 +47,11 @@ abstract class factura {
 
 
   public function setMonto($monto) {
-    $this->monto = $monto;
+    if (is_numeric($monto) && $monto >= 0) {
+        $this->monto = $monto;
+    } else {
+        // Si el monto no es válido, lo dejamos en 0 por seguridad.
+        $this->monto = 0;
+    }
   }
-
-
-
-
 }

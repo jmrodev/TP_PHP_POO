@@ -1,15 +1,16 @@
 <?php
 
-require_once 'factura.php';
+require_once 'Factura.php';
 
-class facturaLuz extends factura {
+class FacturaLuz extends Factura {
 
   const precioKw = 0.15;
   private $kilowats;
 
-  public function __construct($id,$fecha,$monto,$kilowats) {
-    parent::__construct($id,'Luz',$fecha,$monto);
+  public function __construct($id,$fecha,$kilowats) {
+    parent::__construct($id,'Luz',$fecha,0); // El monto inicial se calculará
     $this->kilowats = $kilowats;
+    $this->calcularTotal(); // Calculamos el monto al crear el objeto
   }
 
   public function calcularMonto() {

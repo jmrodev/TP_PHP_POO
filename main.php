@@ -16,7 +16,7 @@ $facturas=[
 ];
 
 
-// --- Opciones del Menú (con Salir) ---
+
 $opcionesMenu = [
   "Ver factura de Luz",
   "Ver factura de Gas",
@@ -24,21 +24,20 @@ $opcionesMenu = [
 ];
 
 
-// --- Bucle principal de la aplicación ---
+
 do {
-    // Mostramos el menú y obtenemos la opción en CADA iteración
     $opcionSeleccionada = mostrarMenu($opcionesMenu, " Facturas de Servicios");
 
     switch ($opcionSeleccionada) {
-        case 1: // Ver factura de Luz
+        case 1:
             $facturas = [$factura1, $factura3, $factura5];
             mostrarFacturas($facturas);
             break;
-        case 2: // Ver factura de Gas
+        case 2:
             $facturas = [$factura2, $factura4, $factura6];
             mostrarFacturas($facturas);
             break;
-        case 3: // Salir
+        case 3:
             mostrar("Saliendo del programa." . PHP_EOL);
             break;
         default:
@@ -46,9 +45,8 @@ do {
             break;
     }
 
-    // Una pequeña pausa para que el usuario pueda leer antes de que el menú se vuelva a mostrar
-    if ($opcionSeleccionada != 3) {
+    if ($opcionSeleccionada != 0) {
         readline("Presione Enter para continuar...");
     }
 
-} while ($opcionSeleccionada != 3); // El bucle continúa mientras no se elija la opción 3 (Salir)
+} while ($opcionSeleccionada != 0);

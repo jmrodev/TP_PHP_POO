@@ -1,6 +1,7 @@
 <?php
 
 function mostrarMenu($opciones,$titulo="App de Facturas"){
+system('clear');
 echo "**--  $titulo  --**\n";
 $numeroOpcion = 1;
 

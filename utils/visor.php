@@ -1,10 +1,11 @@
 <?php
 
 function mostrar($texto) {
+  system('clear');
     echo $texto;
 }
 
-function mostrarFacturas($facturas) {
+function mostrarFacturas($facturas) { 
     foreach ($facturas as $factura) {
         $factura->calcularTotal();
         if ($factura instanceof facturaLuz) {

@@ -1,12 +1,12 @@
 <?php
 
-include_once 'utils/visor.php'
+require_once __DIR__ . '/../utils/visor.php';
 
 abstract class Factura {
-  private $id;
-  private $tipo;
-  private $fecha;
-  private $monto;
+  protected $id;
+  protected $tipo;
+  protected $fecha;
+  protected $monto;
 
   
   protected function __construct($id, $tipo, $fecha, $monto) {
@@ -52,7 +52,7 @@ abstract class Factura {
     if (is_numeric($monto) && $monto >= 0) {
         $this->monto = $monto;
     } else {
-     visor("Monto inválido. Debe ser un número no negativo."); 
+     mostrar("Monto inválido. Debe ser un número no negativo." . PHP_EOL); 
     }
   }
 }

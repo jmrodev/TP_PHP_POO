@@ -10,7 +10,7 @@ class FacturaGas extends Factura {
     public function __construct($id, $fecha, $metrosCubicos) {
         parent::__construct($id,'Gas', $fecha, 0);
         $this->metrosCubicos = $metrosCubicos;
-        $this->calcularTotal(); // Calculamos el monto al crear el objeto
+        $this->calcularTotal();
     }
 
     public function calcularCosto() {

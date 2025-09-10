@@ -8,9 +8,9 @@ class FacturaLuz extends Factura {
   private $kilowats;
 
   public function __construct($id,$fecha,$kilowats) {
-    parent::__construct($id,'Luz',$fecha,0); // El monto inicial se calculará
+    parent::__construct($id,'Luz',$fecha,0);
     $this->kilowats = $kilowats;
-    $this->calcularTotal(); // Calculamos el monto al crear el objeto
+    $this->calcularTotal();
   }
 
   public function calcularMonto() {
